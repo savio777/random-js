@@ -70,11 +70,79 @@ const somenteCurso = (objeto) => objeto.curso
 console.log(nomes(alunos) + ',' + nomes(professores))*/
 
 console.log(elementosLista(somenteNomes, alunos) + ',' + elementosLista(somenteNomes, professores))
+// sávio,thamara,saudades,thiago,vitor
 console.log(elementosLista(somenteCurso, alunos) + ',' + elementosLista(somenteCurso, professores))
+// ADS,direito,direito,ADS,ADS
 
 //
 espaco()
-console.log('3~> Filter     CONTINUAR')
-// 3~>   // CONTINUAR FILTER
+console.log('3~> FILTER')
+// 3~> FILTER
+//      utilizar regras de filtragem para a criação de novas listas
 
-// https://medium.com/tableless/entendendo-programa%C3%A7%C3%A3o-funcional-em-javascript-de-uma-vez-c676489be08b
+let listaNum = [-2,-1,0,1,2,3,4,5,6,7,8,9,10]
+
+const somenteNum = (func, lista) => lista.filter(func)
+
+// forma mais explicada
+/*const par = (num) => {
+    if(num%2 === 0){
+        return num
+    }
+}*/
+
+// forma reduzida
+const par = (num) => num%2===0
+const impar = (num) => num % 2 !== 0
+const maior5 = (num) => num > 5
+const menor5 = (num) => (num <5) && (num > 0)
+
+console.log(somenteNum(par,listaNum))       // [ -2, 0, 2, 4, 6, 8, 10 ]
+console.log(somenteNum(impar,listaNum))     // [ -1, 1, 3, 5, 7, 9 ]
+console.log(somenteNum(maior5,listaNum))    // [ 6, 7, 8, 9, 10 ]
+console.log(somenteNum(menor5,listaNum))    // [ 1, 2, 3, 4 ]
+
+//
+espaco()
+console.log('4~> REDUCE')
+// 4~> REDUCE
+//      retornar somente um valor com alguma regra utilizando os valores da lista, e pode ser utilizado com strings
+
+let listaNumeros = [-1, 1, 2, 3, 4, 5]
+
+const soma = (x, y) => x + y
+const diminuir = (x, y) => x - y
+
+// recebe como parametro a função da operação matematica e um numero que será somado ao resultado
+const reduzir = (func, lista) => lista.reduce(func, 0)
+const reduzir10 = (func, lista) => lista.reduce(func, 10)
+
+console.log(reduzir(soma, listaNumeros))       //  14
+console.log(reduzir(diminuir, listaNumeros))   // -14
+console.log(reduzir10(soma, listaNumeros))     // 24
+console.log(reduzir10(diminuir, listaNumeros)) //-4
+
+let data = ['06','01','2018']
+let meuNome = ['savio','palacio','fontes']
+
+const palavrasReduzir = (func, lista) => lista.reduce(func)
+
+const juntarNome = (antes, depois) => antes + ' ' + depois
+const juntarData = (antes, depois) => antes + '/' + depois
+
+console.log(palavrasReduzir(juntarNome, meuNome))  // savio palacio fontes
+console.log(palavrasReduzir(juntarData, data))     // 06/01/2018
+console.log(meuNome.reduce(juntarNome, '~> '))     // ~>  savio palacio fontes
+console.log(data.reduce(juntarData, '~> '))        // ~>/06/01/2018
+// tem q ter cuidado com o parametro que for passar no reduce, não é obrigatorio
+// passar parametro para adicionar ao inicio do retorno, aconselhavel não adicionar
+// o segundo parametro de adição em reduce para listas com array, a não ser que faça if
+// para não gerar resultados indesejados
+
+//
+espaco()
+console.log('5~> CURRYING')
+// 5~> CURRYING
+//      // CONTINUAR CURRYING
+
+// CONTINUAR https://medium.com/tableless/entendendo-programa%C3%A7%C3%A3o-funcional-em-javascript-de-uma-vez-c676489be08b
