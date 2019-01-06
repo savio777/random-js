@@ -143,6 +143,24 @@ console.log(data.reduce(juntarData, '~> '))        // ~>/06/01/2018
 espaco()
 console.log('5~> CURRYING')
 // 5~> CURRYING
-//      // CONTINUAR CURRYING
+//      utilizar varias função para retornar um valor
 
-// CONTINUAR https://medium.com/tableless/entendendo-programa%C3%A7%C3%A3o-funcional-em-javascript-de-uma-vez-c676489be08b
+/*const adicionar = (x) => {
+    (y) => {
+        return x + y
+    }
+}*/
+
+const adicionar = (x) => (y) => x + y
+
+const adicionarCom5 = adicionar(5)
+const adicionarCom10 = adicionar(10)
+const adicionarComOi = adicionar('oi')
+
+console.log(adicionar(1)(1))         // 2
+console.log(adicionar(1))            // [Function]  errado
+console.log(adicionarCom5(1))        // 6
+console.log(adicionarCom10(1))       // 11
+console.log(adicionar('oi')('kkkk')) // oikkkk
+console.log(adicionarComOi('kkkk'))  // oikkkk
+
