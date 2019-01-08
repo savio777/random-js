@@ -164,3 +164,28 @@ console.log(adicionarCom10(1))       // 11
 console.log(adicionar('oi')('kkkk')) // oikkkk
 console.log(adicionarComOi('kkkk'))  // oikkkk
 
+//
+espaco()
+console.log('~> COMPOSE')
+// ~> COMPOSE
+//      funções pequenas para gerar funções mais complexas, fazer reuso
+
+// irá juntar as duas funções e  passar o parametro x para cada função
+const compose = (j, k) => {
+    return (x) => {
+        return j(k(x))
+    }
+}
+
+// funções para juntar e retornar algum valor
+const maiuscula = (x) => x.toUpperCase()
+const ponto = (x) => x + '.'
+const minuscula = (x) => x.toLowerCase()
+const exclamacao = (x) => x + '!'
+
+// utilizar todas as outras funções de forma simples
+const gritar = compose(maiuscula, exclamacao)
+const falar = compose(minuscula, ponto)
+
+console.log(gritar('oi'))   // OI!
+console.log(falar('OI'))    // oi.
