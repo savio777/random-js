@@ -6,5 +6,4 @@ if(!args[3]){
 
 console.log(args)
 
-//console.log(args[3])
-
+console.log(args[2])
