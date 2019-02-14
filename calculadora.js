@@ -14,28 +14,24 @@ let calculo = args[2].toString()
 if(calculo.search('[+]') >= 0){
     let num1 = calculo.substring(0, calculo.search('[+]'))
     let num2 = calculo.substr(calculo.search('[+]') +1, calculo.length -1)
-    //console.log(num1, num2)
     
     return console.log(parseInt(num1) + parseInt(num2))
 
-// DEPOIS DO + ESTÁ BUGADO 
-
 }else if(calculo.search('[-]') >= 0){
-    let num1 = calculo.substring(0, calculo.search('[+]'))
-    let num2 = calculo.substr(calculo.search('[+]') +1, calculo.length -1)
-    //console.log(num1, num2)
+    let num1 = calculo.substring(0, calculo.search('[-]'))
+    let num2 = calculo.substr(calculo.search('[-]') +1, calculo.length -1)
     
     return console.log(parseInt(num1) - parseInt(num2))
+
 }else if(calculo.search('[*]') >= 0){
-    let num1 = calculo.substring(0, calculo.search('[+]'))
-    let num2 = calculo.substr(calculo.search('[+]') +1, calculo.length -1)
-    //console.log(num1, num2)
+    let num1 = calculo.substring(0, calculo.search('[*]'))
+    let num2 = calculo.substr(calculo.search('[*]') +1, calculo.length -1)
     
     return console.log(parseInt(num1) * parseInt(num2))
+
 }else if(calculo.search('[/]') >= 0){
-    let num1 = calculo.substring(0, calculo.search('[+]'))
-    let num2 = calculo.substr(calculo.search('[+]') +1, calculo.length -1)
-    //console.log(num1, num2)
+    let num1 = calculo.substring(0, calculo.search('[/]'))
+    let num2 = calculo.substr(calculo.search('[/]') +1, calculo.length -1)
     
     return console.log(parseInt(num1) / parseInt(num2))
 } 
