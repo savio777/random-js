@@ -128,7 +128,9 @@ lista.adicionar('iae kkk')
 
 lista.adicionar('flw kkkkk')
 lista.tamanho()
-//lista.imprimir()  // um nó se ligando ao outro
+lista.imprimir()  // um nó se ligando ao outro
+
+console.log('\n\n')
 
 // doferemtes maneiras de imprimir o ultimo nó
 console.log(lista.getPorIndice(2))  // irá imprimir ultimo nó (tamanho - 1)
