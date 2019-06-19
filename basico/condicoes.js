@@ -86,3 +86,11 @@ if(num3 < num4){
 }
 
 console.log()
+
+if(num3 == num4){
+    console.log(true)
+}else if(num3 <= num4){
+    console.log(true)
+}else{
+    console.log(false)
+}
