@@ -109,3 +109,39 @@ switch (sexo) {
     default:
         console.log('não definido')
 }
+
+console.log()
+
+if((1 == 1) && (1 == '1')){
+    console.log(true)
+}else{
+    console.log(false)
+}
+
+console.log()
+
+if((1 === 1) || (1 === '1')){
+    console.log(true)
+}else{
+    console.log(false)
+}
+
+console.log()
+
+if((1 === 1) != (1 === '1')){
+    console.log(true)
+}else{
+    console.log(false)
+}
+
+console.log()
+
+const teste = (1 === 1) != (1 === '1')
+
+const teste1 = (1 == '1') ? 'verdade' : false
+
+console.log(teste)
+
+console.log()
+
+console.log(teste1)
