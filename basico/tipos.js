@@ -1,3 +1,5 @@
+// tutorial: station.rocketseat.com.br/courses/starter
+
 const bool = false
 const str = 'iae'
 const int = 1
