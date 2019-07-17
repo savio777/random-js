@@ -5,7 +5,8 @@ const input = document.querySelector('#app input')
 const botao = document.querySelector('#app button')
 
 // tarefas
-let data = []
+// transformando o json em lista
+let data = JSON.parse(localStorage.getItem('lista_tarefas'))
 
 function carregarTarefas() {
 
@@ -38,12 +39,15 @@ function carregarTarefas() {
         // adicionar botão de remover as tarefas
         todoElemento.appendChild(todoRemover)
 
+        // adicionar onclick para o botão remover e passar o id como parametro
         todoRemover.setAttribute('onclick', `deletarTarefa(${todoElemento.id})`)
 
         // adicionar lista os 'li' ao 'lu'
         lista.appendChild(todoElemento)
     }
 }
+
+carregarTarefas()
 
 function addTarefa() {
     let textoTarefa = input.value
@@ -53,12 +57,21 @@ function addTarefa() {
     input.value = ''
 
     carregarTarefas()
+
+    salvarStorage()
 }
 
 function deletarTarefa(id) {
     data.splice(id, 1)
 
     carregarTarefas()
+
+    salvarStorage()
+}
+
+function salvarStorage(){
+    // storage só aceita em formato json
+    localStorage.setItem('lista_tarefas', JSON.stringify(data)) 
 }
 
 botao.onclick = addTarefa
