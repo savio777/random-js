@@ -1,0 +1,15 @@
+{
+  "name": "estrutura_dados",
+  "version": "1.0.0",
+  "description": "",
+  "main": "baskara.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "savio",
+  "license": "MIT",
+  "dependencies": {
+    "prompt": "^1.0.0"
+  }
+}
