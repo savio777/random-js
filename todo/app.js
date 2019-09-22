@@ -6,25 +6,25 @@ const botao = document.querySelector('#app button')
 
 // tarefas
 // transformando o json em lista
-let data = JSON.parse(localStorage.getItem('lista_tarefas'))
+
+let data = []
+
+if (localStorage.getItem('lista_tarefas')) {
+    data = JSON.parse(localStorage.getItem('lista_tarefas'))
+
+}
 
 function carregarTarefas() {
-
-    // para começar a contar em 0
-    let cont = -1
-
     // limpar elementos da lista do 'ul'
     lista.innerHTML = ''
 
-    for (i of data) {
-
-        cont++
+    for (let i in data) {
 
         // criação de elementos e seus atributos
 
         const todoElemento = document.createElement('li')
-        todoElemento.setAttribute('id', cont)
-        const todoTexto = document.createTextNode(i)
+        todoElemento.setAttribute('id', i)
+        const todoTexto = document.createTextNode(data[i])
 
         const todoRemover = document.createElement('a')
         todoRemover.setAttribute('href', '#')
@@ -69,9 +69,9 @@ function deletarTarefa(id) {
     salvarStorage()
 }
 
-function salvarStorage(){
+function salvarStorage() {
     // storage só aceita em formato json
-    localStorage.setItem('lista_tarefas', JSON.stringify(data)) 
+    localStorage.setItem('lista_tarefas', JSON.stringify(data))
 }
 
 botao.onclick = addTarefa
