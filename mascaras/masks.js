@@ -9,6 +9,6 @@ const maskPhone = (phone) => {
     .replace(/(\d{4})\d+?$/, '$1')
 }
 
-phone.addEventListener('input', (event) => {
+phoneInput.addEventListener('input', (event) => {
   event.target.value = maskPhone(event.target.value)
 }, false)
