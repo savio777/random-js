@@ -68,6 +68,6 @@ const maskPrice = (price) => {
   return value
 }
 
-priceInput.addEventListener('click', (event) => {
+priceInput.addEventListener('input', (event) => {
   event.target.value = maskPrice(event.target.value)
 })
