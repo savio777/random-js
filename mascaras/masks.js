@@ -36,14 +36,20 @@ cpfInput.addEventListener('input', (event) => {
 const cnpjInput = document.getElementById('cnpj')
 
 // 99.999.999/9999-99
-const maskCnpj = (cnpj) => {
-  return cnpj
-    .replace(/\D/g, '')
-    .replace(/(\d{2})(\d)/, '$1.$2')
-    .replace(/(\d{3})(\d)/, '$1.$2')
-    .replace(/(\d{3})(\d)/, '$1/$2')
-    .replace(/(\d{4})(\d)/, '$1-$2')
-    .replace(/(-\d{2})(\d)/, '$1')
+
+// 999.999.999,99
+const maskPrice = (price) => {
+  let newPrice = price
+    .replace('R$', '')
+    .replace(/\s/g, '')
+    .replace('.', '')
+    .replace(',', '.')
+
+  console.log('sem letras~> ', newPrice)
+
+  const value = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(newPrice)
+  console.log('res~> ', value)
+  return value
 }
 
 cnpjInput.addEventListener('input', (event) => {
