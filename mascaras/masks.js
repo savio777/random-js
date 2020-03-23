@@ -36,6 +36,22 @@ cpfInput.addEventListener('input', (event) => {
 const cnpjInput = document.getElementById('cnpj')
 
 // 99.999.999/9999-99
+const maskCnpj = (cnpj) => {
+  return cnpj
+    .replace(/\D/g, '')
+    .replace(/(\d{2})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1.$2')
+    .replace(/(\d{3})(\d)/, '$1/$2')
+    .replace(/(\d{4})(\d)/, '$1-$2')
+    .replace(/(-\d{2})(\d)/, '$1')
+}
+
+cnpjInput.addEventListener('input', (event) => {
+  event.target.value = maskCnpj(event.target.value)
+}, false)
+
+
+const priceInput = document.getElementById('price')
 
 // 999.999.999,99
 const maskPrice = (price) => {
@@ -50,20 +66,6 @@ const maskPrice = (price) => {
   const value = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(newPrice)
   console.log('res~> ', value)
   return value
-}
-
-cnpjInput.addEventListener('input', (event) => {
-  event.target.value = maskCnpj(event.target.value)
-}, false)
-
-
-const priceInput = document.getElementById('price')
-
-// 999.999.999,99
-const maskPrice = (price) => {
-  return price
-    .replace(/\D/g, '')
-    .replace(/(\d)(\d{2})/, '$1,$2')
 }
 
 priceInput.addEventListener('click', (event) => {
