@@ -55,11 +55,18 @@ const priceInput = document.getElementById('price')
 
 // 999.999.999,99
 const maskPrice = (price) => {
-  let newPrice = price
-    .replace('R$', '')
-    .replace(/\s/g, '')
-    .replace('.', '')
-    .replace(',', '.')
+  let newPrice = ''
+
+  if (price.length === 1) {
+    newPrice = '0.0' + price
+  } else {
+
+    newPrice = price
+      .replace('R$', '')
+      .replace(/\s/g, '')
+      .replace('.', '')
+      .replace(',', '.')
+  }
 
   console.log('sem letras~> ', newPrice)
 
