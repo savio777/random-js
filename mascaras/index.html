@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mascaras</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <style>
+      h1 {
+        text-align: center;
+      }
+      form {
+        margin-top: 50px;
+      }
+    </style>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mascaras</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <style>
-    h1 {
-      text-align: center;
-    }
+  <body>
+    <div class="container">
+      <h1 class="card-panel black teal-text">Masks Examples</h1>
+    </div>
 
-    form {
-      margin-top: 50px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <div class="container">
-    <h1 class="card-panel black teal-text">
-      Masks Examples
-    </h1>
-  </div>
-
-
-  <form class="col s12">
-    <div class="row">
-      <div class="container">
-        <div class="input-field col s6">
-          <!-- needed be type text -->
-          <input id="phone" step="1" type="text" maxlength="15">
-          <label class="active" for="phone">Your Number Phone</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="cpf" step="1" type="text">
-          <label class="active" for="cpf">Your CPF</label>
+    <form class="col s12">
+      <div class="row">
+        <div class="container">
+          <div class="input-field col s6">
+            <!-- needed be type text -->
+            <input id="phone" step="1" type="text" maxlength="15" />
+            <label class="active" for="phone">Your Number Phone</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="cpf" step="1" type="text" />
+            <label class="active" for="cpf">Your CPF</label>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="container">
-        <div class="input-field col s6">
-          <input id="cnpj" step="1" type="text">
-          <label class="active" for="cnpj">Your CNPJ</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="price" step="1" type="text">
-          <label class="active" for="price">Set Price R$</label>
+      <div class="row">
+        <div class="container">
+          <div class="input-field col s6">
+            <input id="cnpj" step="1" type="text" />
+            <label class="active" for="cnpj">Your CNPJ</label>
+          </div>
+          <div class="input-field col s6">
+            <input id="price" step="1" type="text" />
+            <label class="active" for="price">Set Price R$</label>
+          </div>
         </div>
       </div>
-    </div>
-  </form>
+      <div class="row">
+        <div class="container">
+          <div class="input-field col s6">
+            <input id="date" step="1" type="text" />
+            <label class="active" for="date">Set Date</label>
+          </div>
+        </div>
+      </div>
+    </form>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="./masks.js"></script>
-</body>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./masks.js"></script>
+  </body>
 </html>
