@@ -108,3 +108,20 @@ dateInput.addEventListener(
   },
   false
 );
+
+// reference: https://github.com/paulorcvieira/30-days-of-javascript
+// other way (best way)
+
+const maskPattern = (valueString = "", patternString = "") => {
+  let i = 0;
+
+  return patternString.replace(/#/g, () => valueString[i++] || "");
+};
+
+// how to use
+
+const numberPhoneTestPattern = maskPattern("999999999999999", "(##) ####-####");
+const cnpjTestPattern = maskPattern("999999999999999", "##.###.###/####-##");
+
+console.log(numberPhoneTestPattern);
+console.log(cnpjTestPattern);
