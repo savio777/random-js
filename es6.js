@@ -61,3 +61,7 @@ console.log(somarDeNovo(1)); // 2
 const add = (...nums) => nums.reduce((x, y) => x + y);
 
 console.log(add(1, 2, 3, 6, 1, 5, 8, 8));
+
+const arrayCreator = (size=5) => Array.from(Array(size).keys())
+
+console.log(arrayCreator())
