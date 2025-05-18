@@ -112,6 +112,10 @@ console.log(`${true} ?? ${false} = ${true ?? false}`);
 
 console.log(`${false} ?? ${true} = ${false ?? true}`);
 
+console.log(`${null} ?? ${true} = ${null ?? true}`);
+
+console.log(`${undefined} ?? ${true} = ${undefined ?? true}`);
+
 console.log(`${undefined} ?? ${false} = ${undefined ?? false}`);
 
 console.log(`${false} && ${false} = ${false && false}`);
@@ -155,3 +159,26 @@ console.log(`${number} % 2 === 0 = ${number % 2 === 0}`);
 number++;
 console.log(`${number} % 2 === 0 = ${number % 2 === 0}`);
 number--;
+
+/*
+operador ??= é equivalente a essa verificação
+if (variavel === null || variavel === undefined) {
+  variavel = valorPadrao;
+}
+
+*/
+
+let teste = null;
+
+teste ??= 10;
+
+teste ??= 12;
+
+console.log("\ncoalescência nula", teste);
+
+teste = undefined;
+
+teste ??= 50;
+teste ??= 52;
+
+console.log("\ncoalescência nula", teste);
