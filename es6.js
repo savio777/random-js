@@ -72,3 +72,12 @@ console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], somar6));
 console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], (x, y) => x - y));
 console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], mult));
 console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], (x, y) => x / y));
+
+const produtos = [
+  { nome: "Notebook", preco: 3000 },
+  { nome: "Mouse", preco: 100 },
+  { nome: "Monitor", preco: 1200 },
+];
+
+console.log(produtos.sort((a, b) => a.preco - b.preco)); // crescente
+console.log(produtos.sort((a, b) => b.preco - a.preco)); // decrescente
