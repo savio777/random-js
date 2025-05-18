@@ -68,10 +68,14 @@ console.log(arrayCreator());
 
 const reduceCustom = (listNumbers = [], func) => listNumbers.reduce(func);
 
-console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], somar6));
-console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], (x, y) => x - y));
-console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], mult));
-console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], (x, y) => x / y));
+const numeros = [1, 2, 3, 6, 1, 5, 8, 8];
+
+console.log(reduceCustom(numeros, somar6));
+console.log(reduceCustom(numeros, (x, y) => x - y));
+console.log(reduceCustom(numeros, mult));
+console.log(reduceCustom(numeros, (x, y) => x / y));
+
+console.log("\n");
 
 const produtos = [
   { nome: "Notebook", preco: 3000 },
@@ -79,5 +83,12 @@ const produtos = [
   { nome: "Monitor", preco: 1200 },
 ];
 
+console.log(produtos);
 console.log(produtos.sort((a, b) => a.preco - b.preco)); // crescente
 console.log(produtos.sort((a, b) => b.preco - a.preco)); // decrescente
+
+console.log("\n");
+
+console.log(numeros);
+console.log(numeros.sort((a, b) => a - b)); // crescente
+console.log(numeros.sort((a, b) => b - a)); // decrescente
