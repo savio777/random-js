@@ -62,6 +62,13 @@ const add = (...nums) => nums.reduce((x, y) => x + y);
 
 console.log(add(1, 2, 3, 6, 1, 5, 8, 8));
 
-const arrayCreator = (size=5) => Array.from(Array(size).keys())
+const arrayCreator = (size = 5) => Array.from(Array(size).keys());
 
-console.log(arrayCreator())
+console.log(arrayCreator());
+
+const reduceCustom = (listNumbers = [], func) => listNumbers.reduce(func);
+
+console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], somar6));
+console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], (x, y) => x - y));
+console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], mult));
+console.log(reduceCustom([1, 2, 3, 6, 1, 5, 8, 8], (x, y) => x / y));
